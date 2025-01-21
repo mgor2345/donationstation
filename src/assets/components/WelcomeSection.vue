@@ -7,7 +7,12 @@
       Note: This is just a proof of concept and donation functionality is disabled at this time.
     </p>
     <div class="grid-container">
-      <div v-for="(item, index) in gridItems" :key="index" class="grid-item">
+      <div
+        v-for="(item, index) in gridItems"
+        :key="index"
+        class="grid-item"
+        @click="navigateToDetails(item.id)"
+      >
         <img :src="item.image" />
         <h2>{{ item.title }}</h2>
       </div>
@@ -21,30 +26,45 @@ export default {
   data() {
     return {
       gridItems: [
-        { image: '/public/SalvationArmy.png', title: 'Salvation Army' },
-        { image: '/public/SpecialOlympics.jpg', title: 'Special Olympics' },
-        { image: '/public/RonaldMcDonald.jpg', title: 'Ronald McDonald Charitable Foundation' },
-        { image: '/public/Paws.jpg', title: 'Paws' },
+        { id: 1, image: '/public/SalvationArmy.png', title: 'Salvation Army' },
+        { id: 2, image: '/public/SpecialOlympics.jpg', title: 'Special Olympics' },
         {
+          id: 3,
+          image: '/public/RonaldMcDonald.jpg',
+          title: 'Ronald McDonald Charitable Foundation',
+        },
+        { id: 4, image: '/public/Paws.jpg', title: 'Paws' },
+        {
+          id: 5,
           image: '/public/GreaterChicagoFoodDepository.png',
           title: 'Greater Chicago Food Depository',
         },
         {
+          id: 6,
           image: '/public/HumaneSocietyOfFultonCounty.png',
           title: 'Humane Society of Fulton County',
         },
-        { image: '/public/RedCross.png', title: 'American Red Cross' },
-        { image: '/public/DoctorsWithoutBorders.png', title: 'Doctors Without Borders' },
-        { image: '/public/StJude.jpg', title: 'St. Jude' },
-        { image: '/public/SaveTheChildren.png', title: 'Save The Children' },
-        { image: '/public/AmericanHeartAssociation.png', title: 'American Heart Association' },
-        { image: '/public/AlzheimersAssociation2.jpg', title: 'Alzheimers Association' },
-        { image: '/public/HabitatForHumanity.png', title: 'Habitat for Humanity' },
-        { image: '/public/ChicagoLegalClinic.jpg', title: 'Chicago Legal Clinic' },
-        { image: '/public/MidwestFoodBank.png', title: 'Midwest Food Bank' },
-        { image: '/public/AlsAssociation.jpeg', title: 'ALS Association' },
+        { id: 7, image: '/public/RedCross.png', title: 'American Red Cross' },
+        { id: 8, image: '/public/DoctorsWithoutBorders.png', title: 'Doctors Without Borders' },
+        { id: 9, image: '/public/StJude.jpg', title: 'St. Jude' },
+        { id: 10, image: '/public/SaveTheChildren.png', title: 'Save The Children' },
+        {
+          id: 11,
+          image: '/public/AmericanHeartAssociation.png',
+          title: 'American Heart Association',
+        },
+        { id: 12, image: '/public/AlzheimersAssociation2.jpg', title: 'Alzheimers Association' },
+        { id: 13, image: '/public/HabitatForHumanity.png', title: 'Habitat for Humanity' },
+        { id: 14, image: '/public/ChicagoLegalClinic.jpg', title: 'Chicago Legal Clinic' },
+        { id: 15, image: '/public/MidwestFoodBank.png', title: 'Midwest Food Bank' },
+        { id: 16, image: '/public/AlsAssociation.jpeg', title: 'ALS Association' },
       ],
     }
+  },
+  methods: {
+    navigateToDetails(id) {
+      this.$router.push({ name: 'SquareDetails', params: { id } })
+    },
   },
 }
 </script>

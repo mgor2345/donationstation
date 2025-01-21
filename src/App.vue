@@ -1,15 +1,13 @@
 <template>
   <div class="app-container">
     <Navbar />
-    <div class="welcome-container">
-      <WelcomeSection />
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
-import Navbar from './Navbar.vue'
-import WelcomeSection from './WelcomeSection.vue'
+import Navbar from './assets/components/Navbar.vue'
+import WelcomeSection from './assets/components/WelcomeSection.vue'
 
 export default {
   components: {
