@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <a href="#" class="navbar-logo">MyApp</a>
+      <a href="#" class="navbar-logo">Donation Station</a>
     </div>
     <button class="navbar-toggle" @click="toggleMenu">☰</button>
     <ul class="navbar-menu" :class="{ 'is-active': isMenuActive }">
@@ -35,13 +35,33 @@ export default {
 </script>
 
 <style>
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%; /* Ensure navbar spans the entire width */
+  background: #005f69;
+  color: white;
+  padding: 15px 20px; /* Padding inside the navbar */
+  display: flex;
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Center items vertically */
+  box-sizing: border-box; /* Account for padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Navbar styling */
+/*
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #42b983;
+  background-color: #005f69;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -50,7 +70,7 @@ export default {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
+*/
 .navbar-brand {
   display: flex;
   align-items: center;

@@ -1,7 +1,11 @@
 <!-- src/components/WelcomeSection.vue -->
 <template>
   <div class="welcome-section">
-    <h1>Welcome to MyApp</h1>
+    <h1>Welcome to the Donation Station!</h1>
+    <p>Choose a charity to donate to:</p>
+    <p>
+      Note: This is just a proof of concept and donation functionality is disabled at this time.
+    </p>
     <div class="grid-container">
       <div v-for="(item, index) in gridItems" :key="index" class="grid-item">
         <img :src="item.image" />
@@ -75,6 +79,10 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.grid-item:hover {
+  background-color: #a9a9a9;
 }
 
 .grid-item img {

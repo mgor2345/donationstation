@@ -1,7 +1,9 @@
 <template>
   <div class="app-container">
     <Navbar />
-    <WelcomeSection />
+    <div class="welcome-container">
+      <WelcomeSection />
+    </div>
   </div>
 </template>
 
@@ -17,7 +19,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.welcome-container {
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Optional: Limit max width for large screens */
+  margin: 50px auto; /* Center horizontally and add vertical spacing */
+  padding: 3px 0; /* Add internal vertical spacing */
+  text-align: center; /* Center content inside */
+}
+
 .app-container {
   width: 100%; /* Full width of the page */
   height: auto;
