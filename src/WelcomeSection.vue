@@ -1,14 +1,14 @@
 <!-- src/components/WelcomeSection.vue -->
 <template>
-  <section class="welcome-section">
+  <div class="welcome-section">
     <h1>Welcome to MyApp</h1>
     <div class="grid-container">
       <div v-for="(item, index) in gridItems" :key="index" class="grid-item">
-        <img :src="item.image" :alt="item.title" />
+        <img :src="item.image" />
         <h2>{{ item.title }}</h2>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -17,26 +17,28 @@ export default {
   data() {
     return {
       gridItems: [
-        { image: 'https://via.placeholder.com/150', title: 'Item 1' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 2' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 3' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 4' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 5' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 6' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 7' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 8' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 9' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 10' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 11' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 12' },
+        { image: '/public/SalvationArmy.png', title: 'Salvation Army' },
+        { image: '/public/SpecialOlympics.jpg', title: 'Special Olympics' },
+        { image: '/public/RonaldMcDonald.jpg', title: 'Ronald McDonald Charitable Foundation' },
+        { image: '/public/Paws.jpg', title: 'Paws' },
+        {
+          image: '/public/GreaterChicagoFoodDepository.png',
+          title: 'Greater Chicago Food Depository',
+        },
+        {
+          image: '/public/HumaneSocietyOfFultonCounty.png',
+          title: 'Humane Society of Fulton County',
+        },
+        { image: '/public/RedCross.png', title: 'American Red Cross' },
+        { image: '/public/DoctorsWithoutBorders.png', title: 'Doctors Without Borders' },
+        { image: '/public/StJude.jpg', title: 'St. Jude' },
+        { image: '/public/SaveTheChildren.png', title: 'Save The Children' },
+        { image: '/public/AmericanHeartAssociation.png', title: 'American Heart Association' },
+        { image: '/public/AlzheimersAssociation2.jpg', title: 'Alzheimers Association' },
         { image: 'https://via.placeholder.com/150', title: 'Item 13' },
         { image: 'https://via.placeholder.com/150', title: 'Item 14' },
         { image: 'https://via.placeholder.com/150', title: 'Item 15' },
         { image: 'https://via.placeholder.com/150', title: 'Item 16' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 17' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 18' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 19' },
-        { image: 'https://via.placeholder.com/150', title: 'Item 20' },
       ],
     }
   },
@@ -77,7 +79,8 @@ export default {
 
 .grid-item img {
   max-width: 80%; /* Adjust the image size inside the square */
-  height: auto;
+  height: 8rem;
+  width: 8rem;
   border-radius: 4px;
 }
 
