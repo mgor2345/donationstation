@@ -5,14 +5,17 @@ import SquareDetails from '../assets/components/SquareDetails.vue'
 const routes = [
   {
     path: '/',
-    name: 'Welcome',
+    name: 'home',
     component: WelcomeSection,
   },
   {
-    path: '/details/:id',
+    path: '/details',
     name: 'SquareDetails',
     component: SquareDetails,
-    props: true, // Enables passing route params as props
+    props: (route) => ({
+      name: route.query.name || 'Unknown Item', // Provide default if missing
+      image: route.query.image || 'hi', // Provide default if missing
+    }),
   },
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <div class="details-container">
-    <h1>Pay for Item {{ id }}</h1>
-    <img :src="`./assets/images/Item${id}.png`" :alt="`Item ${id}`" class="item-image" />
+    <h1>Pay for Item {{ name }}</h1>
+    <img :src="image" :alt="image" class="item-image" />
 
     <form class="payment-form" @submit.prevent="handlePayment">
       <div class="form-group">
@@ -42,8 +42,12 @@ import { defineComponent, ref } from 'vue'
 export default defineComponent({
   name: 'SquareDetails',
   props: {
-    id: {
-      type: Number,
+    name: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
       required: true,
     },
   },
