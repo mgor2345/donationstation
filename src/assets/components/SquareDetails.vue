@@ -1,6 +1,6 @@
 <template>
   <div class="details-container">
-    <h1>Pay for Item {{ name }}</h1>
+    <h1>Donate to {{ name }}!</h1>
     <img :src="image" :alt="image" class="item-image" />
 
     <form class="payment-form" @submit.prevent="handlePayment">
@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
 
 export default defineComponent({
   name: 'SquareDetails',
@@ -68,6 +68,11 @@ export default defineComponent({
         amount: amount.value,
       })
     }
+
+    onMounted(() => {
+      window.scrollTo(0, 0)
+      //console.log('Component mounted')
+    })
 
     return {
       cardholderName,
@@ -100,7 +105,8 @@ h1 {
 
 .item-image {
   max-width: 100%;
-  height: auto;
+  height: 200px;
+  width: 200px;
   margin-bottom: 20px;
   border-radius: 10px;
   border: 1px solid #ddd;
